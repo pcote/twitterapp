@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
 </head>
 <body>
 <div class="navbar navbar-inverse">
@@ -45,8 +47,27 @@
     <div class="form-group">
         <button tabindex="3" id="getTweetsButton" class="btn btn-lg btn-primary btn-block">Get Tweets</button>
     </div>
-</div>
+    <hr /><br />
 
+    <!-- tweet cards area -->
+    <div class="row">
+        <div class="col-lg-12" id="cardListArea">
+        </div>
+    </div>
+</div>
+{% raw %}
+<script id="cardListTemplate" type="text/x-handlebars-template">
+    <div class="container">
+    {{#each tweets}}
+            <div class="row tweetCard">
+                <div class="col-lg-4 cardUsername">{{username}}</div>
+                <div class="col-lg-4 cardTweet">{{tweetMessage}}</div>
+                <div class="col-lg-4 cardDate">{{tweetDate}}</div>
+            </div>
+    {{/each}}
+    </div>
+</script>
+{% endraw %}
 <script src="/static/app.js"></script>
 </body>
 </html>
