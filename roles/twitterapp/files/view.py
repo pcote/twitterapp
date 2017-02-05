@@ -74,8 +74,8 @@ def main_page():
 
 @app.route("/")
 def index():
-    return redirect("/static/login.html")
-
+    return render_template("mainpage.html")
+    #return redirect("/static/login.html")
 
 @app.route("/usercreds", methods=["GET"])
 def get_user_creds():

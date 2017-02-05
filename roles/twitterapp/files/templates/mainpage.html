@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sample Page</title>
+    <title>Twitter App</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -17,24 +17,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="#" class="navbar-brand">Application Namer</a>
+            <a href="#" class="navbar-brand">Twitter App</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">{{current_user.username}}</a></li>
-                <li><a href="/logout"><span class="glyphicon glyphicon-log-out"</a></li>
+                <!-- username and log out button deleted for time being.  Put back here if it turns out
+                we need it after all-->
             </ul>
         </div>
     </div>
 </div>
-<div class="container" ng-app="app" ng-controller="controller">
-stub main page
+<div class="container">
+twitter app stub main page
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
 <script>
-	var controller = function(){};
-	angular.module("app", [])
-	    .controller("controller", controller);
 
 </script>
 </body>
