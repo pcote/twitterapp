@@ -1,0 +1,10 @@
+{
+    "appname": "twitterapp",
+    "mysql_root_password": "rootPassword",
+    "proxyport": 3032,
+    "certcountry": "US",
+    "domain": "twitterapp.com",
+    "certstate": "NY",
+    "certcity": "Anytown",
+    "hostname": "all"
+}
