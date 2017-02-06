@@ -9,14 +9,14 @@ $(function(){
     var template = Handlebars.compile($("#cardListTemplate").html());
 
     var dummyData = {"tweets": [
-        {username: "raz0rfist",
-         tweetMessage: "I'd hate for an unelected judge to conduct himself as a sultan",
+        {username: "chicken_b",
+         tweetMessage: "#MySQL  group_concat function requires more trust in #Oracle than I care to give. A few extra lines from #python itertools mod is better.",
          tweetDate: "2017, Feb 5"},
-        {username: "raz0rfist",
-         tweetMessage: "Just in case being ripped off twice in a month didn't turn me off quite enough...",
+        {username: "chicken_b",
+         tweetMessage: "Brown field maintenance code is unavoidable. Even hobby projects get that way given enough time.",
          tweetDate: "2017, Feb 5"},
-        {username: "raz0rfist",
-         tweetMessage: "If the authoritarian left want to 'credit' anyone for the rise of the so-called 'Alt-Right', they should invest in reflective surfaces.",
+        {username: "chicken_b",
+         tweetMessage: "New blog article: #jQuery Ideas That Help Me Memorize Really Big Numbers http://bit.ly/2dhO2jg ",
          tweetDate: "2017, Feb 5"}
     ]};
 
