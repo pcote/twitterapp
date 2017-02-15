@@ -7,3 +7,4 @@ oauth2client
 pymongo
 flask-login
 beautifulsoup4
+python-twitter

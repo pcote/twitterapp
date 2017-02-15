@@ -6,5 +6,10 @@
     "domain": "twitterapp.com",
     "certstate": "NY",
     "certcity": "Anytown",
-    "hostname": "all"
+    "hostname": "all",
+    "consumer_key": "consumer_key",
+    "consumer_secret": "consumer_secret",
+    "access_token_key": "access_token_key",
+    "access_token_secret": "access_token_secret"
+
 }
