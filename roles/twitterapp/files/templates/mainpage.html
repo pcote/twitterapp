@@ -60,7 +60,7 @@
 <script id="cardListTemplate" type="text/x-handlebars-template">
     <div class="container">
     {{#each tweets}}
-            <div class="row tweetCard" id="tweet{{id}}">
+            <div class="row tweetCard" id="tweet{{id}}" draggable="true">
                 <div class="col-lg-4 cardUsername">{{screen_name}}</div>
                 <div class="col-lg-4 cardTweet">{{message}}</div>
                 <div class="col-lg-4 cardDate">{{date}}</div>
