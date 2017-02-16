@@ -86,5 +86,18 @@ def get_user_creds():
     return jsonify(credentials)
 
 
+@app.route("/tweets", methods=["GET"])
+def get_tweets():
+    tweet_handles = request.args.getlist("tweethandle")
+
+    tweet_list = []
+    for tweet_handle in tweet_handles:
+        tweets = model.get_tweets(tweet_handle, 25)
+        tweet_list.extend(tweets)
+
+    results = dict(tweets=tweet_list)
+    return jsonify(results)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
