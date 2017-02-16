@@ -95,7 +95,7 @@ def get_tweets():
         tweets = model.get_tweets(tweet_handle, 25)
         tweet_list.extend(tweets)
 
-    results = dict(results=tweet_list)
+    results = dict(tweets=tweet_list)
     return jsonify(results)
 
 
