@@ -124,6 +124,7 @@ def get_tweets(screen_name, num_tweets):
     cleaned_up_list = []
     for entry in timeline:
         short_entry = dict()
+        short_entry["id"] = entry["id"]
         short_entry["screen_name"] = entry["user"]["screen_name"]
         short_entry["message"] = entry["text"]
         short_entry["date"] = entry["created_at"]
