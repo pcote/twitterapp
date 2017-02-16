@@ -89,10 +89,12 @@ def get_user_creds():
 @app.route("/tweets", methods=["GET"])
 def get_tweets():
     tweet_handles = request.args.getlist("tweethandle")
+    max_tweets = request.args.get("maxtweets")
+    max_tweets = int(max_tweets)
 
     tweet_list = []
     for tweet_handle in tweet_handles:
-        tweets = model.get_tweets(tweet_handle, 25)
+        tweets = model.get_tweets(tweet_handle, max_tweets)
         tweet_list.extend(tweets)
 
     results = dict(tweets=tweet_list)
