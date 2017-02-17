@@ -54,5 +54,6 @@ Twitterapp lets you lookup people by their twitter handles and see their latest 
 
 #####Other Features
 * __Drag around tweets:__ Click any tweet with your mouse and drag it up to whereever you want it in the tweet list.
-
+* __Look up multiple users:__ Type in multiple twitter handles separated by commas.  Choosing "max tweets" will set the max on a __per user__ basis.
+    * Example: chicken_b, blendernation
     
