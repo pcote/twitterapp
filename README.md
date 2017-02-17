@@ -35,4 +35,24 @@ TwitterApp is a Vagrant based project.  As such, here are the prerequisites requ
 
 ### Using Twitterapp
 
-(todo)
+Twitterapp lets you lookup people by their twitter handles and see their latest tweets.
+
+
+#####Looking up a Twitter User's Tweets
+1.  Go to https://twitterapp.com.  Alternatively, you can just click [here](https://twitterapp.com).
+2.  If you see a message saying "Your connection is not private", don't worry.  You get this because this project uses a self-signed SSL certificate out-of-the-box.
+    * Tell your browser it is safe to proceed.  For example, in Chrome, you would do so by clicking "Advanced" and then "Proceed to twitterapp.com (unsafe)"
+    * When you arrive at the main page, you will see something like "Not Secure" and/or a crossed out "https" in the location bar.  In this case, this is fine.
+    
+3.  Type in the name of a twitter user by their handle.  Do not attach @ signs or hash symbols (#) to their handle.  For example....
+    * Good: realDonaldTrump
+    * Bad: Donald J Trump
+    * Also Bad: @realDonaldTrump, #realDonaldTrump
+
+4.  Select the maximum number of tweets for this user.
+5.  Click the "Get Tweets" button.
+
+#####Other Features
+* __Drag around tweets:__ Click any tweet with your mouse and drag it up to whereever you want it in the tweet list.
+
+    
