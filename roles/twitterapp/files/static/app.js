@@ -1,19 +1,32 @@
 $(function(){
 
+    var getDraggedOb = function(evt){
+        var obId = "#" + evt.originalEvent.dataTransfer.getData("text");
+        var ob = $(obId);
+        return ob;
+    };
+
+    var getTargetOb = function(evt){
+        var obId = "#" + evt.originalEvent.target.id
+        var ob = $(obId);
+        return ob;
+    };
+
     // drag drop stuff
     var dragstartHandler = function(evt){
         var draggedObId = evt.originalEvent.target.id;
         evt.originalEvent.dataTransfer.setData("text", draggedObId);
         console.log("drag start ...");
     };
+
     var dragoverHandler = function(evt){
         evt.preventDefault();
     };
+
+
     var dropHandler = function(evt){
-        var dropzoneId = evt.originalEvent.target.id;
-        var droppedItemId = evt.originalEvent.dataTransfer.getData("text");
-        var dropzone = $("#" + dropzoneId);
-        var droppedItem = $("#" + droppedItemId);
+        var droppedItem = getDraggedOb(evt);
+        var dropzone = getTargetOb(evt);
         droppedItem.insertBefore(dropzone);
     };
 
