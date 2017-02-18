@@ -28,6 +28,17 @@ $(function(){
         var droppedItem = getDraggedOb(evt);
         var dropzone = getTargetOb(evt);
         droppedItem.insertBefore(dropzone);
+        dropzone.css("background-color", "white");
+    };
+
+    var dragenterHandler = function(evt){
+        var target = getTargetOb(evt);
+        target.css("background-color", "#eeeeee");
+    };
+
+    var dragleaveHandler = function(evt){
+        var target = getTargetOb(evt);
+        target.css("background-color", "white");
     };
 
     var getTweetsSuccess = function(data){
@@ -39,6 +50,8 @@ $(function(){
         $(".tweetCard").on("dragstart", dragstartHandler);
         $(".tweetCard").on("dragover", dragoverHandler);
         $(".tweetCard").on("drop", dropHandler);
+        $(".tweetCard").on("dragenter", dragenterHandler);
+        $(".tweetCard").on("dragleave", dragleaveHandler);
     };
 
     var getTweetsFailure = function(res){
