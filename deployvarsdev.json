@@ -1,16 +1,13 @@
 {
-    "appname": "twitterapp",
-    "mysql_root_password": "rootPassword",
-    "proxyport": 3032,
-    "certcountry": "US",
-    "domain": "twitterapp.com",
-    "certstate": "NY",
-    "certcity": "Anytown",
-    "hostname": "all",
-    "consumer_key": "",
-    "consumer_secret": "",
-    "access_token_key": "",
-    "access_token_secret": "",
-    "hostname": "all"
+"consumer_secret": "",
+"consumer_key": "",
+"access_token_key": "",
+"access_token_secret": "",
+"certcity": "Norwich",
+"certstate": "",
+"certcountry": "US",
+"proxyport": 3032,
+"appname": "twitterapp",
+"domain": "twitterapp.com",
+"hostname": "twitterapp.com"
 }
-
