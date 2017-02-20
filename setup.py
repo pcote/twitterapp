@@ -49,7 +49,8 @@ if __name__ == '__main__':
     ssl_info = dict()
     ssl_info["certcity"] = raw_input("City: ")
     ssl_info["certstate"] = raw_input("State (2 character abbreviation): ")
-    ssl_info["country"] = raw_input("Country: ")
+    country = raw_input("Country: ")
+    ssl_info["certcountry"] = country[:2] #BUGFIX: openssl dies if you feed it a country with more than 2 chars
 
     print("\n\nOkay.  Here is the Open SSL info entered for the SSL cert you will be creating...\n\n")
     for k, v in ssl_info.items():
