@@ -13,19 +13,8 @@ Vagrant.configure(2) do |config|
     vb.memory = "1024"
   end
 
-  config.vm.provision "ansible do |ansible|
+  config.vm.provision "ansible" do |ansible|
     ansible.playbook = "playbook.yml"
-    ansible.extra_vars = {
-      appname: "twitterapp",
-      proxyport: 3032,
-      certcountry: "US",
-      domain: "twitterapp.com",
-      certstate: "NY",
-      hostname: "Anytown",
-      consumer_key: "place_consumer_key_here",
-      consumer_secret: "place_consumer_secret_here",
-      access_token_key: "place_access_token_key_here",
-      access_token_secret: "place_token_secret_here"
-    }
+    ansible.extra_vars = "deployvarsdev.json" 
   end
 end
