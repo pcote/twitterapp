@@ -12,23 +12,21 @@ TwitterApp is a Vagrant based project.  As such, here are the prerequisites requ
 3.  64-bit Ubuntu Linux desktop O.S.
 4.  Ansible
 5.  Git
-6.  Python
+6.  Python 2.7
 
 #####Installation
-1.  Clone the project: git clone https://github.com/pcote/twitterapp.git
+1.  Clone the project: <b>git clone https://github.com/pcote/twitterapp.git</b>
 2.  Go to the twitter application page to register a new app [here](https://apps.twitter.com/).  When done take note of the following pieces of information...
     * consumer key
     * consumer secret
     * access token key
     * access token secret
-3.  Open up the file called Vagrantfile.  Make the following edits.
-    * Fill in the values for consumer key and secret as well as access token key and secret.
-    * Fill in the fields for certcity, certstate, and certcountry.  These fields are going to be for an SSL certificate that gets generated for you for this app.
+3.  At the command line run <b>python setup.py</b>.  Follow the instructions for entering the Twitter API credentials and SSL certificate info.
 4.  Open up a file called /etc/hosts in the editor of your choice. (note: admin rights required to edit this)
-    * Add this line at the bottom: 192.168.33.10   twitterapp.com
+    * Add this line at the bottom: <b>192.168.33.10   twitterapp.com</b>
     * Save the file.
 5.  At the command line, go back to the main project folder where the Vagrantfile is.
-6.  Type the following: vagrant up
+6.  Type: <b>vagrant up</b>
 7.  Get up and grab a cup of coffee.  This will take a few minutes.
 8.  After setup process complete, open up a browser and go to your app [here](https://twitterapp.com).
 9.  Congratulation, you are now all set up.
@@ -45,9 +43,9 @@ Twitterapp lets you lookup people by their twitter handles and see their latest 
     * When you arrive at the main page, you will see something like "Not Secure" and/or a crossed out "https" in the location bar.  In this case, this is fine.
     
 3.  Type in the name of a twitter user by their handle.  Do not attach @ signs or hash symbols (#) to their handle.  For example....
-    * Good: realDonaldTrump
-    * Bad: Donald J Trump
-    * Also Bad: @realDonaldTrump, #realDonaldTrump
+    * Good: chicken_b
+    * Bad: Phil Cote
+    * Also Bad: @chicken_b, #chicken_b
 
 4.  Select the maximum number of tweets for this user.
 5.  Click the "Get Tweets" button.
