@@ -96,11 +96,28 @@ $(function(){
         promise.then(getTweetsSuccess, getTweetsFailure);
     };
 
+
+    var getTweetsForPosition = function(position){
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var radius = $("#radiusSelect").val();
+
+        var url = "/tweetsinarea";
+        url = url + "?latitude=" + latitude + "&longitude=" + longitude + "&radius=" + radius;
+
+        var promise = $.get(url);
+        promise.then(getTweetsSuccess, getTweetsFailure);
+    };
+
+    var getLocalsClick = function(evt){
+        console.log("getLocalsClick function");
+        navigator.geolocation.getCurrentPosition(getTweetsForPosition);
+    };
+
     $("#usernameTF").focus();
     $("#getTweetsButton").click(getTweetsButtonClick);
 
-
-
+    $("#btnGetLocals").click(getLocalsClick);
 
 
 });
