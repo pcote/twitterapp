@@ -1,6 +1,9 @@
 from configparser import ConfigParser
 import os
 import twitter
+import requests_oauthlib
+from requests_oauthlib import OAuth2
+
 
 this_directory = __file__.rsplit(os.path.sep, maxsplit=1)[0]
 config_file_path = "{}{}config.ini".format(this_directory, os.path.sep)
@@ -13,11 +16,25 @@ consumer_key = oauth_sec.get("consumer_key")
 consumer_secret = oauth_sec.get("consumer_secret")
 access_token_key = oauth_sec.get("access_token_key")
 access_token_secret = oauth_sec.get("access_token_secret")
+
+
 api = twitter.Api(consumer_key=consumer_key,
                   consumer_secret=consumer_secret,
                   access_token_key=access_token_key,
                   access_token_secret=access_token_secret)
 
+
+def tweet_list_cleaner(timeline):
+    timeline = [tweet.AsDict() for tweet in timeline]
+    cleaned_up_list = []
+    for entry in timeline:
+        short_entry = dict()
+        short_entry["id"] = entry["id"]
+        short_entry["screen_name"] = entry["user"]["screen_name"]
+        short_entry["message"] = entry["text"]
+        short_entry["date"] = entry["created_at"]
+        cleaned_up_list.append(short_entry)
+    return cleaned_up_list
 
 
 def get_tweets(screen_name, num_tweets):
@@ -31,4 +48,12 @@ def get_tweets(screen_name, num_tweets):
         short_entry["message"] = entry["text"]
         short_entry["date"] = entry["created_at"]
         cleaned_up_list.append(short_entry)
+        
     return cleaned_up_list
+
+
+def get_tweets_in_area(lat, long, miles_radius):
+    miles_arg = "{}mi".format(miles_radius)
+    results = api.GetSearch(geocode=(lat, long, miles_arg))
+    results = tweet_list_cleaner(results)
+    return results
