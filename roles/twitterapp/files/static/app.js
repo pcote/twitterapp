@@ -119,5 +119,7 @@ $(function(){
 
     $("#btnGetLocals").click(getLocalsClick);
 
+    $("a[href='#handleTweetsPane']").click(); // set handle tweets to the initial pane.
+
 
 });

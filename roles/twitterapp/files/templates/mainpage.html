@@ -31,38 +31,51 @@
     </div>
 </div>
 <div class="container">
-    <div class="form-group">
-        <label for="usernameTF">Twitter Handle</label>
-        <input tabindex="1" type="input" id="usernameTF" class="input input-lg form-control" />
-    </div>
-    <div class="form-group">
-        <label for="maxTweetsSelect">Max Number of Tweets</label>
-        <select tabindex="2" id="maxTweetsSelect" class="input input-lg form-control">
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="75">75</option>
-            <option value="100">100</option>
-        </select>
+    <ul class="nav nav-tabs">
+        <li><a href="#handleTweetsPane" data-toggle="tab">Tweets By Handle</a></li>
+        <li><a href="#localTweetsPane" data-toggle="tab">Local Tweets (alpha)</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane" id="handleTweetsPane">
+            <div class="form-group">
+                <label for="usernameTF">Twitter Handle</label>
+                <input tabindex="1" type="input" id="usernameTF" class="input input-lg form-control" />
+            </div>
+            <div class="form-group">
+                <label for="maxTweetsSelect">Max Number of Tweets</label>
+                <select tabindex="2" id="maxTweetsSelect" class="input input-lg form-control">
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="75">75</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button tabindex="3" id="getTweetsButton" class="btn btn-lg btn-primary btn-block">Get Tweets</button>
+            </div>
+        </div>
+
+        <div class="tab-pane" id="localTweetsPane">
+            <div class="form-group">
+                <label for="radiusSelect">Get Tweets In Your Area In This Miles Radius</label>
+                <select tabindex="4" name="radiusSelect" id="radiusSelect" class="form-control">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                </select>
+                <hr />
+                <button tabindex="5" id="btnGetLocals" class="btn btn-lg btn-info btn-block">Get Local Tweets</button>
+            </div>
+        </div>
     </div>
 
-    <div class="form-group">
-        <button tabindex="3" id="getTweetsButton" class="btn btn-lg btn-primary btn-block">Get Tweets</button>
-    </div>
     <hr /><br />
-    <p align="center"><b>-- or --</b></p>
-    </hr />
-    <div class="form-group">
-        <label for="radiusSelect">Get Tweets In Your Area In This Miles Radius</label>
-        <select tabindex="4" name="radiusSelect" id="radiusSelect" class="form-control">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-        </select>
-        <hr />
-        <button tabindex="5" id="btnGetLocals" class="btn btn-lg btn-info btn-block">Get Local Tweets</button>
-    </div>
+
+
 
     <!-- tweet cards area -->
     <div class="row">
