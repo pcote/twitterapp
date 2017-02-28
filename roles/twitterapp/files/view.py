@@ -25,5 +25,14 @@ def get_tweets():
     return jsonify(results)
 
 
+@app.route("/tweetsinarea", methods=["GET"])
+def tweets_in_area():
+    latitude = request.args.get("latitude")
+    longitutde = request.args.get("longitude")
+    radius = request.args.get("radius")
+    tweet_list = model.get_tweets_in_area(latitude, longitutde, radius)
+    results = dict(tweets=tweet_list)
+    return jsonify(results)
+
 if __name__ == '__main__':
     app.run(debug=True)
